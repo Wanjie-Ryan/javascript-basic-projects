@@ -51,3 +51,74 @@ const nextBtn = document.querySelector('.next-btn')
 const randomBtn = document.querySelector('.random-btn')
 
 
+// set a starting item
+ let currentItem = 0
+
+ // loading the initial item to the browser
+
+ window.addEventListener('DOMContentLoaded',()=>{
+
+    
+    showPerson()
+
+ })
+
+
+
+ const showPerson = ()=>{
+
+    const item = reviews[currentItem]
+      img.src = item.img
+      author.textContent = item.name
+      job.textContent = item.job
+      info.textContent = item.text
+
+    
+ }
+
+nextBtn.addEventListener("click", ()=>{
+
+    currentItem++
+    showPerson()
+
+    if(currentItem > reviews.length - 1){
+
+      currentItem = 0
+
+    }
+
+
+})
+
+prevBtn.addEventListener("click", ()=>{
+
+  currentItem--
+  showPerson()
+
+  if(currentItem < 0){
+
+    currentItem = reviews.length - 1
+
+
+  }
+})
+
+
+randomBtn.addEventListener("click", ()=>{
+
+  showAny()
+  showPerson()
+  
+
+})
+
+
+const showAny = ()=>{
+
+  const persons = Math.round(Math.random() * reviews.length)
+
+  currentItem = persons
+
+  return currentItem
+
+}
