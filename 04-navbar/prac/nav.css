@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    box-sizing:border-box;
+    margin:0;
+}
+
+.main-nav{
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-head{
+    display:flex;
+
+}
+
+.links{
+
+    /* display: flex; */
+    height:0;
+    overflow: hidden;
+    
+    /* flex-direction: row; */
+}
+
+.show-links{
+    height:2cm;
+    display: flex;
+}
+
+.links li{
+
+    margin-left: 20px;
+    list-style: none;
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .click{
+        display:none;
+    }
+
+    .links-upper .links{
+        height:auto;
+        display: flex;
+    }
+    
+}
